@@ -1,0 +1,18 @@
+<h1>Folders</h1>
+<div>
+  <input
+    name="folderName"
+    #folderName
+    (keydown.enter)="addFolder(folderName)">
+</div>
+
+<a [routerLink]="['/folder', 'all']">
+  Alle
+</a>
+
+<div *ngFor="let folder of folders">
+  <a [routerLink]="['/folder', folder.id]">
+    {{ folder.title }}
+  </a>
+</div>
+

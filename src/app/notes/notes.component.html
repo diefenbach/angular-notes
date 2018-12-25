@@ -1,0 +1,26 @@
+<input
+  type="text"
+  name="filter"
+  placeholder="Filter"
+  [(ngModel)]="filter"
+  (keyup)="onKeyUp()">
+
+<app-folders></app-folders>
+
+<h1>Notes</h1>
+
+<div>
+  <input
+    name="noteName"
+    #noteName
+    placeholder="Add Note"
+    (keydown.enter)="addNote(noteName)">
+</div>
+
+<div *ngFor="let note of notes">
+  <a [routerLink]="['/folder', folderId, 'note', note.id]">
+    {{ note.title }}
+  </a>
+</div>
+
+<router-outlet></router-outlet>
