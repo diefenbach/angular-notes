@@ -31,7 +31,7 @@ export class NotesComponent implements OnInit, OnDestroy {
     });
   }
 
-  onKeyUp() {
+  onFilterKeyUp() {
     if (this.folderId === 'all') {
       this.notesSubscription = this.apiService.getNotes(this.filter).subscribe(notes => this.notes = notes);
     } else {
